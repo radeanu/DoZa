@@ -1,0 +1,24 @@
+{
+  "AlreadyAcc": "Уже есть учетная запись?",
+  "LogIn": "Входить",
+  "NewToDoza": "Новый в DoZa?",
+  "CreateAcc": "Создать аккаунт",
+  "RestorePass": "Восстановить пароль",
+
+  "Login": "Логин",
+  "Password": "Пароль",
+  "Email": "Электронная почта",
+  "Invalid": "Пустое поле",
+  "RequiredLength": "Требуется более 6 символов",
+  "InvalidEmail": "Неверный адрес эл. почты",
+  "loginButton": "Вход",
+  "signUpButton": "Зарегистрироваться",
+  "DataPicker": "Дата рождения",
+  "GenderSelect": "Пол",
+  "GenderMale": "Мужской",
+  "GenderFemale": "Женский",
+
+  "BadAuth": "Не удалось войти",
+  "CloseButton": "Закрыть",
+  "BadSignUp": "Не удалось зарегистрироваться"
+}

@@ -4,13 +4,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { MatIconModule } from '@angular/material/icon';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatButtonModule } from '@angular/material/button';
-import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { SnakBarService } from './helpers';
+import { AngularMaterialModule, I18nModule } from './modules';
 
 @NgModule({
   imports: [
@@ -19,12 +14,8 @@ import { SnakBarService } from './helpers';
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
-    MatIconModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatSnackBarModule,
+    AngularMaterialModule,
+    I18nModule,
   ],
   exports: [
     RouterModule,
@@ -32,12 +23,8 @@ import { SnakBarService } from './helpers';
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
-    MatIconModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatSnackBarModule,
+    AngularMaterialModule,
+    I18nModule
   ],
   providers: [SnakBarService],
   declarations: [],

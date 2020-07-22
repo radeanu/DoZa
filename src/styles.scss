@@ -8,6 +8,7 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
+  background-color: #282c34;
 }
 
 .mat-stroked-button {
@@ -18,9 +19,11 @@ body {
     rgba(144, 238, 144, 1)
   );
 }
+
 .mat-form-field-appearance-legacy .mat-form-field-underline {
   background-color: rgb(51, 51, 51) !important;
 }
+
 .mat-form-field-ripple {
   background-color: rgb(51, 51, 51) !important;
 }

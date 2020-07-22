@@ -16,6 +16,30 @@
 
 <ng-template #form>
   <div class="form-container">
-    <app-login-form (formValues)="logUser($event)"></app-login-form>
+    <app-login-form
+      (formValues)="isLoginUrl ? logUser($event): signUpUser($event)"
+      (routeState)="checkRedirectUrl($event)"
+      [route]="curentRoute">
+    </app-login-form>
+    <ng-container *ngTemplateOutlet="isLoginUrl? signinMsg: loginMsg"></ng-container>
+  </div>
+</ng-template>
+
+<ng-template #loginMsg>
+  <div class="info">
+    <div>{{"AlreadyAcc" | translate}}
+      <span class="link" (click)="redirectUser('login')">{{"LogIn" | translate}}</span>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #signinMsg>
+  <div class="info">
+    <div>
+      <span class="link" (click)="restorePass()">{{"RestorePass" | translate}}</span>
+    </div>
+    <div>{{"NewToDoza" | translate}}
+      <span class="link" (click)="redirectUser('sign-up')">{{"CreateAcc" | translate}}</span>
+    </div>
   </div>
 </ng-template>

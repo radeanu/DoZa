@@ -1,32 +1,57 @@
 <form [formGroup]="myForm" novalidate (ngSubmit)="submit()">
   <div class="form-box">
     <mat-form-field appearance="legacy">
-      <mat-label>Login</mat-label>
+      <mat-label>{{"Login" | translate}}</mat-label>
       <input matInput formControlName="uName" name="login">
       <mat-icon matSuffix>person</mat-icon>
-      <mat-error *ngIf="myForm.controls.uPassword.invalid">{{getErrorMsg('login')}}</mat-error>
+      <mat-error *ngIf="myForm.controls.uPassword.invalid">{{getErrorMsg('uName') | translate}}</mat-error>
     </mat-form-field>
   </div>
-
   <div class="form-box">
     <mat-form-field appearance="legacy">
-      <mat-label>Password</mat-label>
-      <input matInput #input name="password"
-        [type]="hide?'password':'text'"
-        formControlName="uPassword"
-        autocomplete="new-password">
-      <mat-icon matSuffix
-        [style.cursor]="'pointer'"
-        (click)="hide=!hide">
-        {{hide ? 'visibility_off' : 'visibility'}}
-      </mat-icon>
+      <mat-label>{{"Password" | translate}}</mat-label>
+      <input matInput #input name="password" [type]="hide?'password':'text'" formControlName="uPassword" autocomplete="new-password">
+      <mat-icon matSuffix [style.cursor]="'pointer'" (click)="hide=!hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
       <mat-hint align="end">{{input.value?.length || 0}}/6</mat-hint>
-      <mat-error *ngIf="myForm.controls.uPassword.invalid">{{getErrorMsg('pass')}}</mat-error>
+      <mat-error *ngIf="myForm.controls.uPassword.invalid">{{getErrorMsg('uPassword') | translate}}</mat-error>
     </mat-form-field>
   </div>
 
+  <ng-container *ngIf="!isLoginRoute">
+    <div class="form-box">
+      <mat-form-field appearance="legacy">
+        <mat-label>{{"Email" | translate}}</mat-label>
+        <input matInput formControlName="uEmail" name="email" type="email">
+        <mat-icon matSuffix>email</mat-icon>
+        <mat-error *ngIf="myForm.controls.uEmail.invalid">{{getErrorMsg('uEmail') | translate}}</mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="form-box">
+      <mat-form-field appearance="legacy">
+        <mat-label>{{"DataPicker" | translate}}</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="uData"/>
+        <mat-datepicker-toggle matSuffix [for]="picker">
+          <mat-icon matDatepickerToggleIcon>date_range</mat-icon>
+        </mat-datepicker-toggle>
+        <mat-datepicker #picker startView="multi-year"></mat-datepicker>
+        <mat-error *ngIf="myForm.controls.uData.invalid">{{getErrorMsg('uData') | translate}}</mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="form-box">
+      <mat-form-field appearance="legacy">
+        <mat-label>{{"GenderSelect" | translate}}</mat-label>
+        <mat-select formControlName="uGender">
+          <mat-option value="male" selected>{{"GenderMale" | translate}}</mat-option>
+          <mat-option value="female">{{"GenderFemale" | translate}}</mat-option>
+        </mat-select>
+        <mat-error *ngIf="myForm.controls.uGender.invalid">{{getErrorMsg('uGender') | translate}}</mat-error>
+      </mat-form-field>
+    </div>
+  </ng-container>
+
   <div class="form-box">
-      <!-- <button class="btn-submmit">Log in</button> -->
-      <button mat-stroked-button class="btn-submmit">Log in</button>
+    <button mat-stroked-button class="btn-submmit">{{(isLoginRoute? 'loginButton'  : 'signUpButton') | translate}}</button>
   </div>
 </form>

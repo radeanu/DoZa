@@ -15,6 +15,8 @@ import { AuthService } from '../../core/auth.service';
 export class LoginComponent implements OnInit {
   isMobile: boolean;
   error: string;
+  curentRoute: string;
+  isLoginUrl = true;
 
   constructor(
     private responsiveService: ResponsiveService,
@@ -30,6 +32,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     this.onResize();
+    this.curentRoute = this.route.snapshot.routeConfig.path;
   }
 
   onResize(): void {
@@ -40,7 +43,30 @@ export class LoginComponent implements OnInit {
     this.authService.login(data).pipe(first())
       .subscribe(
         _ => this.router.navigate(['cars']),
-        error => this.snakBarService.open('Could not authenticate', 'Close')
+        _ => this.snakBarService.open('BadAuth', 'CloseButton', 3000)
       );
+  }
+
+  signUpUser(data: FormLogin): void {
+    console.log(data);
+
+    this.authService.signUp(data).pipe(first())
+      .subscribe(
+        _ => this.router.navigate(['cars']),
+        _ => this.snakBarService.open('BadSignUp', 'CloseButton', 3000)
+      );
+  }
+
+  checkRedirectUrl(isLoginUrl: boolean): void {
+    this.isLoginUrl = isLoginUrl;
+  }
+
+  redirectUser(link: string): void {
+    this.router.navigate([link]);
+  }
+
+  restorePass(): void {
+    console.log('passs restore');
+
   }
 }

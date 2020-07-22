@@ -1,0 +1,24 @@
+{
+  "AlreadyAcc": "Ai deja un cont?",
+  "LogIn": "Intră",
+  "NewToDoza": "Ești nou(ă) pe DoZa?",
+  "CreateAcc": "Creează un cont",
+  "RestorePass": "Restabilirea parolei",
+
+  "Login": "Login",
+  "Password": "Parola",
+  "Email": "Email",
+  "Invalid": "Invalid",
+  "RequiredLength": "Sunt necesare mai mult de 6 caractere",
+  "InvalidEmail": "Email incorect",
+  "loginButton": "Intră",
+  "signUpButton": "Crează",
+  "DataPicker": "Data nașterii",
+  "GenderSelect": "Genul",
+  "GenderMale": "Masculin",
+  "GenderFemale": "Feminin",
+
+  "BadAuth": "Eroare la autentificare",
+  "CloseButton": "Închide",
+  "BadSignUp": "Eroare la înregistrare"
+}

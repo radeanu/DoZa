@@ -9,6 +9,7 @@ import { CarsComponent } from './components/cars/cars.component';
 const routes: Routes = [
   { path: '', component: AppComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'sign-up', component: LoginComponent },
   { path: 'cars', component: CarsComponent, canActivate: [AuthGuard] },
   { path: '**', redirectTo: '/' },
 ];

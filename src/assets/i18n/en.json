@@ -1,0 +1,24 @@
+{
+  "AlreadyAcc": "Already have an account?",
+  "LogIn": "Log In",
+  "NewToDoza": "New to DoZa?",
+  "CreateAcc": "Create an account",
+  "RestorePass": "Restore password",
+
+  "Login": "Login",
+  "Password": "Password",
+  "Email": "Email",
+  "Invalid": "Invalid",
+  "RequiredLength": "Required more than 6 caracteres",
+  "InvalidEmail": "Invalid email address",
+  "loginButton": "Log In",
+  "signUpButton": "Sign Up",
+  "DataPicker": "Birthday",
+  "GenderSelect": "Sex",
+  "GenderMale": "Male",
+  "GenderFemale": "Female",
+
+  "BadAuth": "Could not authenticate",
+  "CloseButton": "Close",
+  "BadSignUp": "Could not sign up"
+}

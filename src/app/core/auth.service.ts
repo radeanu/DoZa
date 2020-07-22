@@ -26,6 +26,15 @@ export class AuthService {
     );
   }
 
+  signUp(data: FormLogin): Observable<any> {
+    return this.http.post<{ token: string }>(API_URL + '/api/sign-up', data).pipe(
+      map(result => {
+        localStorage.setItem('access_token', result.token);
+        return true;
+      })
+    );
+  }
+
   logout(): void {
     localStorage.removeItem('access_token');
   }
