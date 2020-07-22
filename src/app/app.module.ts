@@ -1,27 +1,31 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { AppRoutingModule } from './app-routing.module';
-import { HttpClientModule } from '@angular/common/http';
 
+import { AppRoutingModule } from './app-routing.module';
+import { ComponentsModule } from './components/components.module';
+import { SharedModule } from './shared/shared.module';
+import { CoreModule } from './core/core.module';
 import { AppComponent } from './app.component';
-import { LogService } from './servicess/log.service';
-import { SpanErrorDirective } from './directives/span-error.directive';
-import { CarService } from './servicess/car.service';
+import { TokenInterceptor } from './core/token-interceptor.service';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+
+import { AuthService } from './core/auth.service';
+import { AuthGuard } from './core/auth.guard';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SpanErrorDirective
   ],
   imports: [
-    BrowserModule,
+    CoreModule,
     AppRoutingModule,
-    FormsModule,
-    HttpClientModule,
-    ReactiveFormsModule,
+    SharedModule,
+    ComponentsModule,
   ],
-  providers: [LogService, CarService],
+  providers: [
+    AuthService,
+    AuthGuard,
+    { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true }
+  ],
   bootstrap: [
     AppComponent
   ],

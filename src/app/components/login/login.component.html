@@ -1,0 +1,21 @@
+<div class="login-container" (window:resize)="onResize()">
+  <div *ngIf="!isMobile; else mobile"></div>
+  <div *ngIf="isMobile; else desktop"></div>
+</div>
+
+<ng-template #desktop>
+  <div class="container"></div>
+  <div class="container">
+    <ng-container *ngTemplateOutlet="form"></ng-container>
+  </div>
+</ng-template>
+
+<ng-template #mobile>
+  <ng-container *ngTemplateOutlet="form"></ng-container>
+</ng-template>
+
+<ng-template #form>
+  <div class="form-container">
+    <app-login-form (formValues)="logUser($event)"></app-login-form>
+  </div>
+</ng-template>

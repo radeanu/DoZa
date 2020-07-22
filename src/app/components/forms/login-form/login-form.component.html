@@ -1,0 +1,32 @@
+<form [formGroup]="myForm" novalidate (ngSubmit)="submit()">
+  <div class="form-box">
+    <mat-form-field appearance="legacy">
+      <mat-label>Login</mat-label>
+      <input matInput formControlName="uName" name="login">
+      <mat-icon matSuffix>person</mat-icon>
+      <mat-error *ngIf="myForm.controls.uPassword.invalid">{{getErrorMsg('login')}}</mat-error>
+    </mat-form-field>
+  </div>
+
+  <div class="form-box">
+    <mat-form-field appearance="legacy">
+      <mat-label>Password</mat-label>
+      <input matInput #input name="password"
+        [type]="hide?'password':'text'"
+        formControlName="uPassword"
+        autocomplete="new-password">
+      <mat-icon matSuffix
+        [style.cursor]="'pointer'"
+        (click)="hide=!hide">
+        {{hide ? 'visibility_off' : 'visibility'}}
+      </mat-icon>
+      <mat-hint align="end">{{input.value?.length || 0}}/6</mat-hint>
+      <mat-error *ngIf="myForm.controls.uPassword.invalid">{{getErrorMsg('pass')}}</mat-error>
+    </mat-form-field>
+  </div>
+
+  <div class="form-box">
+      <!-- <button class="btn-submmit">Log in</button> -->
+      <button mat-stroked-button class="btn-submmit">Log in</button>
+  </div>
+</form>

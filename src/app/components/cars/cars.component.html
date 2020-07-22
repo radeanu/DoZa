@@ -1,0 +1,8 @@
+<button (click)="getCars()">Get Cars</button>
+<hr>
+
+<ul>
+  <li *ngFor="let car of cars| async; let i = index">
+    {{i}}: {{car.name}}
+  </li>
+</ul>
