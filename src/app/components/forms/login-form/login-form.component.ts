@@ -12,17 +12,16 @@ import { FormLogin } from '@shared/types';
 export class LoginFormComponent implements OnInit {
   hide = true;
   isLoginRoute = true;
+  myForm: FormGroup = new FormGroup({
+    uName: new FormControl('', Validators.required),
+    uPassword: new FormControl('', [Validators.required, Validators.minLength(6)]),
+  });
 
   @Input() route: string;
   @Output() formValues = new EventEmitter<FormLogin>();
   @Output() routeState = new EventEmitter<boolean>();
 
   constructor(private datepipe: DatePipe) { }
-
-  myForm: FormGroup = new FormGroup({
-    uName: new FormControl('', Validators.required),
-    uPassword: new FormControl('', [Validators.required, Validators.minLength(6)]),
-  });
 
   ngOnInit(): void { this._checkForNewFormControls(); }
 
@@ -35,15 +34,18 @@ export class LoginFormComponent implements OnInit {
   }
 
   getErrorMsg(control: string): string {
+    if (!this.myForm.controls[control].invalid || !this.myForm.controls[control].touched) {
+      return;
+    }
     if (this.myForm.controls[control].hasError('minlength')) {
-      return 'RequiredLength';
+      return 'REQUIRED_LENGTH';
     }
 
     if (this.myForm.controls[control].hasError('email')) {
-      return 'InvalidEmail';
+      return 'INVALID_EMAIL';
     }
 
-    return 'Invalid';
+    return 'INVALID';
   }
 
   private get _getFormData(): FormLogin {

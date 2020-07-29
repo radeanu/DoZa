@@ -5,10 +5,3 @@ export interface FormLogin {
   birdthday?: string;
   gender?: string;
 }
-
-export interface User {
-  id: number;
-  userName: string;
-  password: string;
-  token?: string;
-}

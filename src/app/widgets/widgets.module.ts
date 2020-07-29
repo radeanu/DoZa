@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 
 import { SharedModule } from '../shared/shared.module';
+import { WidgetsButtonsComponent } from './buttons/buttons.component';
 
 @NgModule({
-  declarations: [
-  ],
+  declarations: [],
   imports: [SharedModule],
   exports: [],
   providers: [],

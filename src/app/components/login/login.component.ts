@@ -43,7 +43,7 @@ export class LoginComponent implements OnInit {
     this.authService.login(data).pipe(first())
       .subscribe(
         _ => this.router.navigate(['cars']),
-        _ => this.snakBarService.open('BadAuth', 'CloseButton', 3000)
+        _ => this.snakBarService.open('BAD_AUTH', 'CLOSE_BUTTON', 3000)
       );
   }
 
@@ -53,7 +53,7 @@ export class LoginComponent implements OnInit {
     this.authService.signUp(data).pipe(first())
       .subscribe(
         _ => this.router.navigate(['cars']),
-        _ => this.snakBarService.open('BadSignUp', 'CloseButton', 3000)
+        _ => this.snakBarService.open('BAD_SIGN_UP', 'CLOSE_BUTTON', 3000)
       );
   }
 

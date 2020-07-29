@@ -1,0 +1,31 @@
+$font-family-default: monospace;
+$font_title_color_dark: #d60063;
+$button_color_dark: #c50946;
+$font_text_color_dark: #dedede;
+$font_link_color_dark: #a7a7a7;
+$input-error-color: #ec8ea2;
+$message-error-color: #b90000;
+
+* {
+  font-family: $font-family-default;
+}
+
+.title {
+  color: $font_title_color_dark;
+}
+
+.link {
+  color: $font_link_color_dark;
+  cursor: pointer;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+@mixin display-flex {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
