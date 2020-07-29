@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,11 @@ import { Component } from '@angular/core';
 })
 
 export class AppComponent {
+  currenLang: string;
+
+  constructor(public translate: TranslateService) {
+    const browserLang = translate.getBrowserLang();
+    this.currenLang = browserLang.match(/en|ru|ro/) ? browserLang : 'ro';
+    translate.use(this.currenLang);
+  }
 }

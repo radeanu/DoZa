@@ -1,17 +1,54 @@
+@import "../../../../assets/common";
+
 .form-box {
-  margin-top: 15px;
+  padding-top: 10px;
+  @include display_flex;
+  flex-direction: column;
 }
 
-.btn-submmit {
+.form-error {
+  height: 15px;
+  margin: 0;
+  padding: 0;
+  margin-left: 10px;
+  font-size: small;
+  line-height: normal;
+  color: $message-error-color;
+}
+
+.button-submit {
   width: 100%;
-  margin-top: 20px;
+  align-self: center;
+  justify-self: center;
+  border: 0;
+  padding: 5px;
+  cursor: pointer;
+  background-image: linear-gradient(
+    90deg,
+    #1b1f27 0%,
+    $button_color_dark 50%,
+    #1b1f27 100%
+  );
 }
 
-.mat-form-field {
-  width: 100%;
+.form-input {
+  border: none;
+  border-radius: 15px;
+  padding: 5px 10px;
+  color: #dedede;
+  background-color: #31495f;
+  font-family: $font-family-default;
 }
 
-.mat-icon-button .mat-button-wrapper {
+.form-input:focus {
+  outline: none;
+  border-color: #1d6112;
+}
+
+.form-input:invalid {
+  background-color: $input-error-color;
+}
+
+.form-date-box {
   display: flex;
-  justify-content: center;
 }

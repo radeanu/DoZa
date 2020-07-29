@@ -1,5 +1,6 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component, Output, EventEmitter, Input, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { DatePipe } from '@angular/common';
 
 import { FormLogin } from '@shared/types';
 
@@ -8,34 +9,68 @@ import { FormLogin } from '@shared/types';
   templateUrl: './login-form.component.html',
   styleUrls: ['./login-form.component.scss']
 })
-export class LoginFormComponent {
+export class LoginFormComponent implements OnInit {
   hide = true;
-  @Output() formValues = new EventEmitter<FormLogin>();
-
+  isLoginRoute = true;
   myForm: FormGroup = new FormGroup({
     uName: new FormControl('', Validators.required),
     uPassword: new FormControl('', [Validators.required, Validators.minLength(6)]),
   });
+
+  @Input() route: string;
+  @Output() formValues = new EventEmitter<FormLogin>();
+  @Output() routeState = new EventEmitter<boolean>();
+
+  constructor(private datepipe: DatePipe) { }
+
+  ngOnInit(): void { this._checkForNewFormControls(); }
 
   submit(): void {
     if (this.myForm.invalid) {
       return;
     }
 
-    const userName = this.myForm.get('uName').value;
-    const password = this.myForm.get('uPassword').value;
-    this.formValues.emit({ userName, password });
+    this.formValues.emit(this._getFormData);
   }
 
   getErrorMsg(control: string): string {
-    if (control === 'pass') {
-      return this.myForm.controls.uPassword.hasError('minlength')
-        ? 'Required more than 6 caracteres'
-        : 'Invalid';
+    if (!this.myForm.controls[control].invalid || !this.myForm.controls[control].touched) {
+      return;
+    }
+    if (this.myForm.controls[control].hasError('minlength')) {
+      return 'REQUIRED_LENGTH';
     }
 
-    return this.myForm.controls.uName.invalid
-      ? 'Invalid'
-      : '';
+    if (this.myForm.controls[control].hasError('email')) {
+      return 'INVALID_EMAIL';
+    }
+
+    return 'INVALID';
+  }
+
+  private get _getFormData(): FormLogin {
+    const data: FormLogin = {
+      userName: this.myForm.get('uName').value,
+      password: this.myForm.get('uPassword').value
+    };
+
+    return this.isLoginRoute
+      ? data
+      : {
+        ...data,
+        email: this.myForm.get('uEmail').value,
+        birdthday: this.datepipe.transform(this.myForm.get('uData').value, 'dd/MM/yyyy'),
+        gender: this.myForm.get('uGender').value,
+      };
+  }
+
+  private _checkForNewFormControls(): void {
+    if (this.route === 'sign-up') {
+      this.routeState.emit(false);
+      this.isLoginRoute = false;
+      this.myForm.addControl('uEmail', new FormControl('', [Validators.required, Validators.email]));
+      this.myForm.addControl('uData', new FormControl('', [Validators.required]));
+      this.myForm.addControl('uGender', new FormControl('', [Validators.required]));
+    }
   }
 }

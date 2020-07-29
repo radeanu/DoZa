@@ -1,0 +1,24 @@
+{
+  "ALREADY_ACC": "Already have an account?",
+  "LOG_IN": "Log In",
+  "NEW_TO_DOZA": "New to DoZa?",
+  "CREATE_ACC": "Create an account",
+  "RESTORE_PASS": "Restore password",
+
+  "LOGIN": "Login",
+  "PASSWORD": "Password",
+  "EMAIL": "Email",
+  "INVALID": "Invalid",
+  "REQUIRED_LENGTH": "Required more than 6 caracteres",
+  "INVALID_EMAIL": "Invalid email address",
+  "LOGIN_BUTTON": "Log In",
+  "SIGN_UP_BUTTON": "Sign Up",
+  "DATA_PICKER": "Birthday",
+  "GENDER_SELECT": "Sex",
+  "GENDER_MALE": "Male",
+  "GENDER_FEMALE": "Female",
+
+  "BAD_AUTH": "Could not authenticate",
+  "CLOSE_BUTTON": "Close",
+  "BAD_SIGN_UP": "Could not sign up"
+}
