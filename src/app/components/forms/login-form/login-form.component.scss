@@ -29,6 +29,7 @@
     $button_color_dark 50%,
     #1b1f27 100%
   );
+<<<<<<< HEAD
 }
 
 .form-input {
@@ -38,6 +39,30 @@
   color: #dedede;
   background-color: #31495f;
   font-family: $font-family-default;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #1d6112;
+}
+
+.form-input:invalid {
+  background-color: $input-error-color;
+}
+
+.form-date-box {
+  display: flex;
+=======
+}
+
+.form-input {
+  border: none;
+  border-radius: 15px;
+  padding: 5px 10px;
+  color: #dedede;
+  background-color: #31495f;
+  font-family: $font-family-default;
+>>>>>>> 22003a5... host project on firebase
 }
 
 .form-input:focus {
