@@ -29,6 +29,7 @@
     $button_color_dark 50%,
     #1b1f27 100%
   );
+<<<<<<< HEAD
 }
 
 .form-input {
@@ -51,13 +52,28 @@
 
 .form-date-box {
   display: flex;
+=======
 }
 
-.btn-submmit {
-  margin-top: 0;
+.form-input {
+  border: none;
+  border-radius: 15px;
+  padding: 5px 10px;
+  color: #dedede;
+  background-color: #31495f;
+  font-family: $font-family-default;
+>>>>>>> 22003a5... host project on firebase
 }
 
-.mat-icon {
-  font-size: 150% !important;
-  color: #333333;
+.form-input:focus {
+  outline: none;
+  border-color: #1d6112;
+}
+
+.form-input:invalid {
+  background-color: $input-error-color;
+}
+
+.form-date-box {
+  display: flex;
 }
