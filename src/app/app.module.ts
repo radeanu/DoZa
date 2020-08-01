@@ -3,23 +3,25 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { ComponentsModule } from './components/components.module';
-import { SharedModule } from './shared/shared.module';
 import { AppComponent } from './app.component';
 
 import { TokenInterceptor } from './core/token-interceptor.service';
 import { CoreModule } from './core/core.module';
 import { AuthService } from './core/auth.service';
 import { AuthGuard } from './core/auth.guard';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { I18nModule } from '@shared/modules';
 
 @NgModule({
   declarations: [
     AppComponent,
   ],
   imports: [
+    BrowserAnimationsModule,
     CoreModule,
     AppRoutingModule,
-    SharedModule,
     ComponentsModule,
+    I18nModule,
   ],
   providers: [
     AuthService,
