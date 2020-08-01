@@ -10,7 +10,7 @@ import { CoreModule } from './core/core.module';
 import { AuthService } from './core/auth.service';
 import { AuthGuard } from './core/auth.guard';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { I18nModule } from '@shared/modules';
+import { I18nModule } from './core/i18n/i18n.module';
 
 @NgModule({
   declarations: [

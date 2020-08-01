@@ -9,12 +9,8 @@ import { LoginFormComponent } from './login-form/login-form.component';
   ],
   imports: [
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
-  exports: [
-    LoginFormComponent
-  ],
-  providers: [],
-  bootstrap: [],
+  exports: [LoginFormComponent],
 })
 export class AppFormsModule { }

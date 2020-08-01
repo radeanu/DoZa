@@ -1,20 +1,12 @@
 import { NgModule } from '@angular/core';
-import { DatePipe } from '@angular/common';
 
-import { SharedModule } from '../shared/shared.module';
-import { LoginComponent } from './login/login.component';
-import { CarsComponent } from './cars/cars.component';
-import { LoginFormComponent } from './forms/login-form/login-form.component';
-import { WidgetsModule } from '../widgets/widgets.module';
+import { AppLoginModule } from './login/login.module';
+import { AppFormsModule } from './forms/forms.module';
 
 @NgModule({
-  declarations: [
-    LoginComponent,
-    LoginFormComponent,
-    CarsComponent,
-  ],
-  imports: [SharedModule, WidgetsModule],
-  providers: [DatePipe],
+  declarations: [],
+  imports: [AppLoginModule, AppFormsModule],
+  providers: [],
   bootstrap: [],
 })
 export class ComponentsModule { }
