@@ -5,7 +5,7 @@ import { first } from 'rxjs/operators';
 import { ResponsiveService } from '@shared/services';
 import { SnakBarService } from '@shared/helpers';
 import { FormLogin } from '@shared/types';
-import { AuthService } from '../../core/auth.service';
+import { AuthService } from '../../../core/auth.service';
 
 @Component({
   selector: 'app-login',
