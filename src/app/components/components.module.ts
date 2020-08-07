@@ -9,4 +9,4 @@ import { AppFormsModule } from './forms/forms.module';
   providers: [],
   bootstrap: [],
 })
-export class ComponentsModule { }
+export class AppComponentsModule { }

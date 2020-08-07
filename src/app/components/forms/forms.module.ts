@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginFormComponent } from './login-form/login-form.component';
 
 @NgModule({
@@ -8,7 +8,6 @@ import { LoginFormComponent } from './login-form/login-form.component';
     LoginFormComponent
   ],
   imports: [
-    FormsModule,
     ReactiveFormsModule,
   ],
   exports: [LoginFormComponent],
