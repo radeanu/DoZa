@@ -13,17 +13,19 @@ import { AuthService } from '../../../core/auth.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  isMobile: boolean;
   error: string;
-  curentRoute: string;
   isLoginUrl = true;
+  isMobile: boolean;
+  curentRoute: string;
+  loginPath = 'auth/login';
+  signUpPath = 'auth/sign-up';
 
   constructor(
     private responsiveService: ResponsiveService,
     private route: ActivatedRoute,
     private router: Router,
     private authService: AuthService,
-    private snakBarService: SnakBarService
+    private snakBarService: SnakBarService,
   ) {
     // if (this.authService.loggedIn) {
     //   this.router.navigate(['/']);

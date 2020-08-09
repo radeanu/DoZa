@@ -9,8 +9,6 @@ import { AuthService } from './core/auth.service';
 import { AuthGuard } from './core/auth.guard';
 
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponentsModule } from './components/components.module';
-
 import { AppComponent } from './app.component';
 
 @NgModule({
@@ -21,7 +19,6 @@ import { AppComponent } from './app.component';
     BrowserAnimationsModule,
     CoreModule,
     AppRoutingModule,
-    AppComponentsModule,
     I18nModule,
   ],
   providers: [

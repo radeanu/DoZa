@@ -28,7 +28,7 @@
 <ng-template #loginMsg>
   <div class="info-container">
     <div>{{"ALREADY_ACC" | translate}}
-      <span class="link" (click)="redirectUser('login')">{{"LOG_IN" | translate}}</span>
+      <span class="link" (click)="redirectUser(loginPath)">{{"LOG_IN" | translate}}</span>
     </div>
   </div>
 </ng-template>
@@ -40,7 +40,7 @@
     </div>
     <div>
       <span class="title">{{"NEW_TO_DOZA" | translate}} </span>
-      <span class="link" (click)="redirectUser('sign-up')">{{"CREATE_ACC" | translate}}</span>
+      <span class="link" (click)="redirectUser(signUpPath)">{{"CREATE_ACC" | translate}}</span>
     </div>
   </div>
 </ng-template>
