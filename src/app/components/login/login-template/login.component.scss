@@ -1,0 +1,40 @@
+@import "../../../../assets/common";
+
+.login-container {
+  height: 100%;
+  @include display-flex;
+}
+
+.container {
+  @include display-flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  height: 100%;
+}
+
+.form-container {
+  padding: 0 15px;
+  border-left: 2px solid #31495f;
+  // border-image-slice: 1;
+  // border-image-source: linear-gradient(
+  //   90deg,
+  //   rgba(108, 88, 55, 1) 0%,
+  //   rgba(143, 24, 122, 1) 20%,
+  //   rgba(27, 171, 50, 1) 50%,
+  //   rgba(143, 24, 122, 1) 80%,
+  //   rgba(108, 88, 55, 1) 100%
+  // );
+}
+
+.info-container {
+  padding-top: 5px;
+  font-size: small;
+}
+
+@media only screen and (max-width: 768px) {
+  .form-container {
+    align-self: center;
+    margin: auto;
+  }
+}

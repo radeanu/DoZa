@@ -1,0 +1,46 @@
+<div class="login-container" (window:resize)="onResize()">
+  <div *ngIf="!isMobile; else mobile"></div>
+  <div *ngIf="isMobile; else desktop"></div>
+</div>
+
+<ng-template #desktop>
+  <div class="container"></div>
+  <div class="container">
+    <ng-container *ngTemplateOutlet="form"></ng-container>
+  </div>
+</ng-template>
+
+<ng-template #mobile>
+  <ng-container *ngTemplateOutlet="form"></ng-container>
+</ng-template>
+
+<ng-template #form>
+  <div class="form-container">
+    <app-login-form
+      (formValues)="isLoginUrl ? logUser($event): signUpUser($event)"
+      (routeState)="checkRedirectUrl($event)"
+      [route]="curentRoute">
+    </app-login-form>
+    <ng-container *ngTemplateOutlet="isLoginUrl? signinMsg: loginMsg"></ng-container>
+  </div>
+</ng-template>
+
+<ng-template #loginMsg>
+  <div class="info-container">
+    <div>{{"ALREADY_ACC" | translate}}
+      <span class="link" (click)="redirectUser(loginPath)">{{"LOG_IN" | translate}}</span>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #signinMsg>
+  <div class="info-container">
+    <div>
+      <span class="link" (click)="restorePass()">{{"RESTORE_PASS" | translate}}</span>
+    </div>
+    <div>
+      <span class="title">{{"NEW_TO_DOZA" | translate}} </span>
+      <span class="link" (click)="redirectUser(signUpPath)">{{"CREATE_ACC" | translate}}</span>
+    </div>
+  </div>
+</ng-template>
