@@ -3,14 +3,17 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { TranslateService } from '@ngx-translate/core';
 
 @Injectable()
-export class SnakBarService {
-  constructor(private snackBar: MatSnackBar, private translate: TranslateService) { }
+export class SnackBarService {
+  constructor(
+    private snackBar: MatSnackBar,
+    private translate: TranslateService
+  ) {}
 
-  open(message: string, act: string, durr?: number): void {
+  open(message: string, act: string, dur?: number): void {
     const msg = this.translate.instant(message);
     const action = this.translate.instant(act);
     this.snackBar.open(msg, action, {
-      duration: durr || 2000
+      duration: dur || 2000,
     });
   }
 }

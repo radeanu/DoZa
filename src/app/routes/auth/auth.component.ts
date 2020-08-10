@@ -3,20 +3,20 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { first } from 'rxjs/operators';
 
 import { ResponsiveService } from '@shared/services';
-import { SnakBarService } from '@shared/helpers';
+import { SnackBarService } from '@shared/helpers';
 import { FormLogin } from '@shared/types';
-import { AuthService } from '../../../core/auth.service';
+import { AuthService } from '../../core/auth.service';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  selector: 'app-auth',
+  templateUrl: './auth.component.html',
+  styleUrls: ['./auth.component.scss'],
 })
-export class LoginComponent implements OnInit {
+export class AuthComponent implements OnInit {
   error: string;
   isLoginUrl = true;
   isMobile: boolean;
-  curentRoute: string;
+  currentRoute: string;
   loginPath = 'auth/login';
   signUpPath = 'auth/sign-up';
 
@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private authService: AuthService,
-    private snakBarService: SnakBarService,
+    private snackBarService: SnackBarService
   ) {
     // if (this.authService.loggedIn) {
     //   this.router.navigate(['/']);
@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     this.onResize();
-    this.curentRoute = this.route.snapshot.routeConfig.path;
+    this.currentRoute = this.route.snapshot.routeConfig.path;
   }
 
   onResize(): void {
@@ -42,20 +42,30 @@ export class LoginComponent implements OnInit {
   }
 
   logUser(data: FormLogin): void {
-    this.authService.login(data).pipe(first())
+    this.authService
+      .login(data)
+      .pipe(first())
       .subscribe(
-        _ => this.router.navigate(['cars']),
-        _ => this.snakBarService.open('BAD_AUTH', 'CLOSE_BUTTON', 3000)
+        (_) => this.router.navigate(['cars']),
+        (_) =>
+          this.snackBarService.open('auth.BAD_AUTH', 'auth.CLOSE_BUTTON', 3000)
       );
   }
 
   signUpUser(data: FormLogin): void {
     console.log(data);
 
-    this.authService.signUp(data).pipe(first())
+    this.authService
+      .signUp(data)
+      .pipe(first())
       .subscribe(
-        _ => this.router.navigate(['cars']),
-        _ => this.snakBarService.open('BAD_SIGN_UP', 'CLOSE_BUTTON', 3000)
+        (_) => this.router.navigate(['cars']),
+        (_) =>
+          this.snackBarService.open(
+            'auth.BAD_SIGN_UP',
+            'auth.CLOSE_BUTTON',
+            3000
+          )
       );
   }
 
@@ -68,7 +78,6 @@ export class LoginComponent implements OnInit {
   }
 
   restorePass(): void {
-    console.log('passs restore');
-
+    console.log('pass restore');
   }
 }
