@@ -4,10 +4,17 @@
   </mat-drawer>
 
   <div class="main">
-    <mat-toolbar class="example">
-      <button  mat-icon-button aria-label="Menu toggle" (click)="drawer.toggle()">
-        <mat-icon>menu</mat-icon>
-      </button>
+    <mat-toolbar class="toolbar">
+      <div class="toolbar-button">
+        <button  mat-icon-button aria-label="Menu toggle" (click)="drawer.toggle()">
+          <mat-icon>menu</mat-icon>
+        </button>
+      </div>
+      <div class="toolbar-title">
+        <span>
+          Preferences
+        </span>
+      </div>
     </mat-toolbar>
     <div class="content">
 

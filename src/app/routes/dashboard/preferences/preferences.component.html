@@ -1,3 +1,24 @@
-<div>
-  <span>Hi</span>
-</div>
+<div class="flex-box-column">
+    <div class="form-description">
+      <span>Show list of activities based on this preferences</span>
+    </div>
+    <br>
+    <div class="flex-box-column">
+      <label>Pick gender</label>
+      <mat-radio-group class="flex-box-row">
+        <mat-radio-button value="male">Male</mat-radio-button>
+        <mat-radio-button value="female">Female</mat-radio-button>
+        <mat-radio-button value="any">Any</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <br>
+    <div class="flex-box-column">
+      <div class="flex-box-row x-left">
+        <label class="flex-col-item">Age range</label>
+      </div>
+      <div class="flex-box-row">
+          <ng5-slider [(value)]="min" [(highValue)]="max" [options]="options"></ng5-slider>
+      </div>
+    </div>
+
+  </div>
