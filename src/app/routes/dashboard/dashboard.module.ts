@@ -10,9 +10,14 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
 
 import { DashboardComponent } from './dashboard.component';
-import { AppLangSwitchModule } from 'src/app/components/lang-switch/lang-switch.module';
+import { AppPreferencesModule } from './preferences/preferences.module';
+import { AppLangSwitchModule } from '../../components/lang-switch/lang-switch.module';
+import { AppSideNavModule } from '../../components/side-nav/side-nav.module';
 
-export const routes: Routes = [{ path: '', component: DashboardComponent }];
+export const routes: Routes = [
+  { path: '', component: DashboardComponent },
+  { path: 'preferences', component: DashboardComponent },
+];
 
 @NgModule({
   declarations: [DashboardComponent],
@@ -20,6 +25,8 @@ export const routes: Routes = [{ path: '', component: DashboardComponent }];
     CommonModule,
     TranslateModule,
     AppLangSwitchModule,
+    AppPreferencesModule,
+    AppSideNavModule,
     MatSidenavModule,
     MatToolbarModule,
     MatIconModule,
