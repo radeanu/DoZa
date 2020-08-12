@@ -1,24 +1,26 @@
 {
-  "ALREADY_ACC": "Уже есть учетная запись?",
-  "LOG_IN": "Войти",
-  "NEW_TO_DOZA": "Новый в DoZa?",
-  "CREATE_ACC": "Создать аккаунт",
-  "RESTORE_PASS": "Восстановить пароль",
-
-  "LOGIN": "Логин",
-  "PASSWORD": "Пароль",
-  "EMAIL": "Электронная почта",
-  "INVALID": "Пустое поле",
-  "REQUIRED_LENGTH": "Требуется более 6 символов",
-  "INVALID_EMAIL": "Неверный адрес эл. почты",
-  "LOGIN_BUTTON": "Вход",
-  "SIGN_UP_BUTTON": "Зарегистрироваться",
-  "DATA_PICKER": "Дата рождения",
-  "GENDER_SELECT": "Пол",
-  "GENDER_MALE": "Мужской",
-  "GENDER_FEMALE": "Женский",
-
-  "BAD_AUTH": "Не удалось войти",
-  "CLOSE_BUTTON": "Закрыть",
-  "BAD_SIGN_UP": "Не удалось зарегистрироваться"
+  "auth": {
+    "ALREADY_ACC": "Уже есть учетная запись?",
+    "LOG_IN": "Войти",
+    "NEW_TO_DOZA": "Новый в DoZa?",
+    "CREATE_ACC": "Создать аккаунт",
+    "RESTORE_PASS": "Восстановить пароль",
+    "BAD_AUTH": "Не удалось войти",
+    "CLOSE_BUTTON": "Закрыть",
+    "BAD_SIGN_UP": "Не удалось зарегистрироваться"
+  },
+  "login-form": {
+    "LOGIN": "Логин",
+    "PASSWORD": "Пароль",
+    "EMAIL": "Электронная почта",
+    "INVALID": "Пустое поле",
+    "REQUIRED_LENGTH": "Требуется более 6 символов",
+    "INVALID_EMAIL": "Неверный адрес эл. почты",
+    "LOGIN_BUTTON": "Вход",
+    "SIGN_UP_BUTTON": "Зарегистрироваться",
+    "DATA_PICKER": "Дата рождения",
+    "GENDER_SELECT": "Пол",
+    "GENDER_MALE": "Мужской",
+    "GENDER_FEMALE": "Женский"
+  }
 }

@@ -1,24 +1,26 @@
 {
-  "ALREADY_ACC": "Ai deja un cont?",
-  "LOG_IN": "Intră",
-  "NEW_TO_DOZA": "Ești nou(ă) pe DoZa?",
-  "CREATE_ACC": "Creează un cont",
-  "RESTORE_PASS": "Restabilirea parolei",
-
-  "LOGIN": "Login",
-  "PASSWORD": "Parola",
-  "EMAIL": "Email",
-  "INVALID": "Invalid",
-  "REQUIRED_LENGTH": "Sunt necesare mai mult de 6 caractere",
-  "INVALID_EMAIL": "Email incorect",
-  "LOGIN_BUTTON": "Intră",
-  "SIGN_UP_BUTTON": "Crează",
-  "DATA_PICKER": "Data nașterii",
-  "GENDER_SELECT": "Genul",
-  "GENDER_MALE": "Masculin",
-  "GENDER_FEMALE": "Feminin",
-
-  "BAD_AUTH": "Eroare la autentificare",
-  "CLOSE_BUTTON": "Închide",
-  "BAD_SIGN_UP": "Eroare la înregistrare"
+  "auth": {
+    "ALREADY_ACC": "Ai deja un cont?",
+    "LOG_IN": "Intră",
+    "NEW_TO_DOZA": "Ești nou(ă) pe DoZa?",
+    "CREATE_ACC": "Creează un cont",
+    "RESTORE_PASS": "Restabilirea parolei",
+    "BAD_AUTH": "Eroare la autentificare",
+    "CLOSE_BUTTON": "Închide",
+    "BAD_SIGN_UP": "Eroare la înregistrare"
+  },
+  "login-form": {
+    "LOGIN": "Login",
+    "PASSWORD": "Parola",
+    "EMAIL": "Email",
+    "INVALID": "Invalid",
+    "REQUIRED_LENGTH": "Sunt necesare mai mult de 6 caractere",
+    "INVALID_EMAIL": "Email incorect",
+    "LOGIN_BUTTON": "Intră",
+    "SIGN_UP_BUTTON": "Crează",
+    "DATA_PICKER": "Data nașterii",
+    "GENDER_SELECT": "Genul",
+    "GENDER_MALE": "Masculin",
+    "GENDER_FEMALE": "Feminin"
+  }
 }

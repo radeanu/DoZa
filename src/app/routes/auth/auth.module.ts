@@ -5,26 +5,27 @@ import { Routes, RouterModule } from '@angular/router';
 import { CommonModule, DatePipe } from '@angular/common';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 
-import { SnakBarService } from '@shared/helpers';
-import { LoginComponent } from './login/login.component';
+import { SnackBarService } from '@shared/helpers';
+import { AuthComponent } from './auth.component';
+import { AppLangSwitchModule } from '../../components/lang-switch/lang-switch.module';
 import { AppFormsModule } from '../../components/forms/app-forms.module';
 
 export const routes: Routes = [
-  { path: 'login', component: LoginComponent },
-  { path: 'sign-up', component: LoginComponent }
+  { path: 'login', component: AuthComponent },
+  { path: 'sign-up', component: AuthComponent },
 ];
 
 @NgModule({
-  declarations: [LoginComponent],
+  declarations: [AuthComponent],
   imports: [
     ReactiveFormsModule,
     CommonModule,
     AppFormsModule,
     MatSnackBarModule,
     TranslateModule,
-    RouterModule.forChild(routes)
+    AppLangSwitchModule,
+    RouterModule.forChild(routes),
   ],
-  exports: [LoginComponent],
-  providers: [SnakBarService, DatePipe],
+  providers: [SnackBarService, DatePipe],
 })
-export class AppAuthModule { }
+export class AppAuthModule {}

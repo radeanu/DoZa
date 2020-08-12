@@ -1,0 +1,46 @@
+:host {
+  color: black;
+}
+
+::ng-deep {
+  span {
+    outline: none;
+  }
+}
+
+p {
+  margin: 0;
+}
+
+.flex-box-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.flex-box-row {
+  padding: 10px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  * {
+    margin: 0 10px;
+  }
+}
+
+.flex-item {
+  padding: 10px 5px;
+}
+
+.flex-col-item {
+  padding: 10px 0;
+}
+
+.x-left {
+  justify-content: start;
+}
+
+.x-center {
+  justify-content: center;
+}

@@ -1,0 +1,30 @@
+<mat-drawer-container class="container" autosize (window:resize)="onResize()">
+  <mat-drawer [ngClass]="isMobile ? 'sidenav-mobile' : 'sidenav-desktop'" mode="over" #drawer>
+    <app-side-nav></app-side-nav>
+  </mat-drawer>
+
+  <div class="main">
+    <mat-toolbar class="toolbar">
+      <div class="toolbar-button">
+        <button  mat-icon-button aria-label="Menu toggle" (click)="drawer.toggle()">
+          <mat-icon>menu</mat-icon>
+        </button>
+      </div>
+      <div class="toolbar-title">
+        <span>
+          Preferences
+        </span>
+      </div>
+    </mat-toolbar>
+    <div class="content">
+
+      <ng-container [ngSwitch]="currentRoute">
+        <div *ngSwitchCase="'preferences'" class="component">
+          <app-preferences></app-preferences>
+        </div>
+        <div *ngSwitchDefault>Basic</div>
+      </ng-container>
+
+    </div>
+  </div>
+</mat-drawer-container>

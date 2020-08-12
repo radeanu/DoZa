@@ -19,7 +19,7 @@ import { AppComponent } from './app.component';
     BrowserAnimationsModule,
     CoreModule,
     AppRoutingModule,
-    I18nModule,
+    I18nModule
   ],
   providers: [
     AuthService,
@@ -30,4 +30,5 @@ import { AppComponent } from './app.component';
     AppComponent
   ],
 })
-export class AppModule { }
+export class AppModule {
+}
