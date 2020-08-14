@@ -3,12 +3,12 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
 import { Routes, RouterModule } from '@angular/router';
 import { CommonModule, DatePipe } from '@angular/common';
-import { MatSnackBarModule } from '@angular/material/snack-bar';
+// import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 import { SnackBarService } from '@shared/helpers';
 import { AuthComponent } from './auth.component';
 import { AppLangSwitchModule } from '../../components/lang-switch/lang-switch.module';
-import { AppFormsModule } from '../../components/forms/app-forms.module';
+import { AppLoginFormModule } from '../../components/forms/login-form/login-form.module';
 
 export const routes: Routes = [
   { path: 'login', component: AuthComponent },
@@ -20,8 +20,7 @@ export const routes: Routes = [
   imports: [
     ReactiveFormsModule,
     CommonModule,
-    AppFormsModule,
-    MatSnackBarModule,
+    AppLoginFormModule,
     TranslateModule,
     AppLangSwitchModule,
     RouterModule.forChild(routes),

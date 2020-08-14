@@ -3,16 +3,13 @@ import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatIconModule } from '@angular/material/icon';
-import { MatDividerModule } from '@angular/material/divider';
-import { MatListModule } from '@angular/material/list';
+import { SidebarModule } from 'primeng/sidebar';
 
 import { DashboardComponent } from './dashboard.component';
-import { AppPreferencesModule } from './preferences/preferences.module';
+import { AppPreferencesFormModule } from '../../components/forms/preferences-form/preferences-form.module';
 import { AppLangSwitchModule } from '../../components/lang-switch/lang-switch.module';
 import { AppSideNavModule } from '../../components/side-nav/side-nav.module';
+import { AppToolbarModule } from '../../components/toolbar/toolbar.module';
 
 export const routes: Routes = [
   { path: '', component: DashboardComponent },
@@ -25,13 +22,10 @@ export const routes: Routes = [
     CommonModule,
     TranslateModule,
     AppLangSwitchModule,
-    AppPreferencesModule,
+    AppPreferencesFormModule,
     AppSideNavModule,
-    MatSidenavModule,
-    MatToolbarModule,
-    MatIconModule,
-    MatDividerModule,
-    MatListModule,
+    AppToolbarModule,
+    SidebarModule,
     RouterModule.forChild(routes),
   ],
 })

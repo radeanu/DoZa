@@ -1,0 +1,20 @@
+<div class="flex col main">
+  <div class="form-description">
+    <span>Show list of activities based on this preferences</span>
+  </div>
+  <br>
+  <div class="flex row x-space-evn">
+    <p-radioButton name="gender" value="Male" label="Male" [(ngModel)]="gender"></p-radioButton>
+    <p-radioButton name="gender" value="Female" label="Female" [(ngModel)]="gender"></p-radioButton>
+    <p-radioButton name="gender" value="Any" label="Any" [(ngModel)]="gender"></p-radioButton>
+  </div>
+  <br>
+  <div class="flex col">
+    <div class="flex x-space-btw">
+      <span>Age range:</span>
+      <span>{{rangeValues[0] + ' - ' + rangeValues[1]}}</span>
+    </div>
+    <br>
+    <p-slider [(ngModel)]="rangeValues" [range]="true" [min]="0" [max]="120" [step]="1"></p-slider>
+  </div>
+</div>

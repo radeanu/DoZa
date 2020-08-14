@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { first } from 'rxjs/operators';
 
 import { ResponsiveService } from '@shared/services';
-import { SnackBarService } from '@shared/helpers';
+// import { SnackBarService } from '@shared/helpers';
 import { FormLogin } from '@shared/types';
 import { AuthService } from '../../core/auth.service';
 
@@ -24,9 +24,9 @@ export class AuthComponent implements OnInit {
     private responsiveService: ResponsiveService,
     private route: ActivatedRoute,
     private router: Router,
-    private authService: AuthService,
-    private snackBarService: SnackBarService
-  ) {
+    private authService: AuthService
+  ) // private snackBarService: SnackBarService
+  {
     // if (this.authService.loggedIn) {
     //   this.router.navigate(['/']);
     // }
@@ -47,8 +47,7 @@ export class AuthComponent implements OnInit {
       .pipe(first())
       .subscribe(
         (_) => this.router.navigate(['cars']),
-        (_) =>
-          this.snackBarService.open('auth.BAD_AUTH', 'auth.CLOSE_BUTTON', 3000)
+        (_) => console.log('Error login')
       );
   }
 
@@ -60,12 +59,7 @@ export class AuthComponent implements OnInit {
       .pipe(first())
       .subscribe(
         (_) => this.router.navigate(['cars']),
-        (_) =>
-          this.snackBarService.open(
-            'auth.BAD_SIGN_UP',
-            'auth.CLOSE_BUTTON',
-            3000
-          )
+        (_) => console.log('Error sign-up')
       );
   }
 

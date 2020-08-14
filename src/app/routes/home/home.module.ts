@@ -10,6 +10,5 @@ export const routes: Routes = [{ path: '', component: HomeComponent }];
 @NgModule({
   declarations: [HomeComponent],
   imports: [CommonModule, AppLangSwitchModule, RouterModule.forChild(routes)],
-  // exports: [HomeComponent],
 })
 export class AppHomeModule {}

@@ -3,7 +3,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
 import { CommonModule, DatePipe } from '@angular/common';
 
-import { LoginFormComponent } from './login-form/login-form.component';
+import { LoginFormComponent } from './login-form.component';
 
 @NgModule({
   declarations: [LoginFormComponent],
@@ -11,4 +11,4 @@ import { LoginFormComponent } from './login-form/login-form.component';
   exports: [LoginFormComponent],
   providers: [DatePipe],
 })
-export class AppFormsModule { }
+export class AppLoginFormModule {}
