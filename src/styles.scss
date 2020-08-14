@@ -14,9 +14,12 @@ button {
   border: none;
   cursor: pointer;
   overflow: hidden;
+  padding: 0;
 }
 
 i {
+  display: flex !important;
+  align-items: center !important;
   font-size: 1.2em;
 }
 

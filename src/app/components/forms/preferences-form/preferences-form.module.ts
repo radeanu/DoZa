@@ -4,7 +4,9 @@ import { CommonModule, DatePipe } from '@angular/common';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import { SliderModule } from 'primeng/slider';
-import { RadioButtonModule } from 'primeng/radiobutton';
+import { SelectButtonModule } from 'primeng/selectbutton';
+import { DropdownModule } from 'primeng/dropdown';
+import { ChipsModule } from 'primeng/chips';
 
 import { PreferencesFormComponent } from './preferences-form.component';
 
@@ -16,7 +18,9 @@ import { PreferencesFormComponent } from './preferences-form.component';
     CommonModule,
     TranslateModule,
     SliderModule,
-    RadioButtonModule,
+    SelectButtonModule,
+    DropdownModule,
+    ChipsModule,
   ],
   exports: [PreferencesFormComponent],
   providers: [DatePipe],
