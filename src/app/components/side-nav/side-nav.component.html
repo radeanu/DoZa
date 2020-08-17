@@ -7,8 +7,13 @@
 
     <div class="flex col full content">
       <div class="flex row x-space-evn item">
-        <i class="pi pi-cog"></i>
-        <button pButton pRipple type="button" label="Settings" class="p-button-raised p-button-secondary p-button-text nav-button"></button>
+        <i class="pi pi-star-o"></i>
+        <button
+        pButton pRipple
+        type="button" label="Preferences"
+        class="p-button-raised p-button-secondary p-button-text nav-button"
+        (click)="navigateTo('preferences')"
+        ></button>
       </div>
     </div>
   </div>

@@ -7,6 +7,7 @@ import { SliderModule } from 'primeng/slider';
 import { SelectButtonModule } from 'primeng/selectbutton';
 import { DropdownModule } from 'primeng/dropdown';
 import { ChipsModule } from 'primeng/chips';
+import { ButtonModule } from 'primeng/button';
 
 import { PreferencesFormComponent } from './preferences-form.component';
 
@@ -19,6 +20,7 @@ import { PreferencesFormComponent } from './preferences-form.component';
     TranslateModule,
     SliderModule,
     SelectButtonModule,
+    ButtonModule,
     DropdownModule,
     ChipsModule,
   ],

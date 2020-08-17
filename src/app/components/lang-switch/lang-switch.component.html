@@ -1,7 +1,11 @@
-<div class="langSwitch">
-  <select [value]="currentLang" (change)="translate.use(sel.value)" #sel>
-    <option value="en">English</option>
-    <option value="ro">Română</option>
-    <option value="ru">Руский</option>
-  </select>
+<div class="flex x-space-evn full" style="border-bottom: 1px solid #d9d9d9;">
+  <div *ngFor="let lang of languages" class="flex full x-center item" [ngClass]="{'active': lang.label === currentLang}">
+    <button
+      pButton
+      type="button" [label]="lang.value"
+      class="p-button-text switch-button"
+      [ngClass]="(lang.label === currentLang)? 'p-button-primary active switch-button': 'p-button-secondary switch-button'"
+      (click)="switchLang(lang)"
+    ></button>
+  </div>
 </div>

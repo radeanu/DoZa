@@ -1,32 +1,39 @@
-<div class="flex col main">
-  <div class="form-description">
-    <span class="description">Show list of activities based on next preferences</span>
-  </div>
-
-  <br>
+<div class="flex col main full y-space-btw">
   <div class="flex col">
-    <p class="label">Gender:</p>
-    <div class="flex x-center">
-      <p-selectButton [options]="genders" [(ngModel)]="gender" optionLabel="gender">
-        <ng-template let-item>
-          <div>{{item.value.name}}</div>
-        </ng-template>
-      </p-selectButton>
+    <div class="form-description">
+      <span class="description">Show list of activities based on next preferences</span>
     </div>
-  </div>
 
-  <br>
-  <div class="flex col">
-    <div class="flex x-space-btw">
-      <span class="label">Age range:</span>
-      <span class="label">{{rangeValues[0] + ' - ' + rangeValues[1]}}</span>
-    </div>
     <br>
-    <p-slider [(ngModel)]="rangeValues" [range]="true" [min]="0" [max]="120" [step]="1"></p-slider>
+    <div class="flex col">
+      <p class="label">Gender:</p>
+      <div class="flex x-center">
+        <p-selectButton [options]="genders" [(ngModel)]="gender" optionLabel="gender">
+          <ng-template let-item>
+            <div>{{item.value.name}}</div>
+          </ng-template>
+        </p-selectButton>
+      </div>
+    </div>
+
+    <br>
+    <div class="flex col">
+      <div class="flex x-space-btw">
+        <span class="label">Age range:</span>
+        <span class="label">{{rangeValues[0] + ' - ' + rangeValues[1]}}</span>
+      </div>
+      <br>
+      <p-slider [(ngModel)]="rangeValues" [range]="true" [min]="0" [max]="120" [step]="1"></p-slider>
+    </div>
+
+    <br>
+    <div class="flex col">
+      <!-- HERE -->
+    </div>
   </div>
 
-  <br>
-  <div class="flex col">
-    <!-- HERE -->
+  <div class="flex x-space-evn">
+    <button pButton label="Cancel" icon="pi pi-times" class="p-button-secondary" (click)="back()"></button>
+    <button pButton label="Save" icon="pi pi-check" class="p-button-success"></button>
   </div>
 </div>

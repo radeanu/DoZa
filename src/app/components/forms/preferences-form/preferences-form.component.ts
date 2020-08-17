@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { SelectItem } from 'primeng/api';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-preferences-form',
@@ -13,7 +14,7 @@ export class PreferencesFormComponent {
   activities: SelectItem[];
   selectedActivities = [];
 
-  constructor() {
+  constructor(private location: Location) {
     this.genders = [{ name: 'Male' }, { name: 'Female' }, { name: 'Any' }];
     this.activities = [
       { label: 'Football', value: 'Football' },
@@ -24,7 +25,7 @@ export class PreferencesFormComponent {
     ];
   }
 
-  show(ev: any): void {
-    ev.preventDefault();
+  back(): void {
+    this.location.back();
   }
 }

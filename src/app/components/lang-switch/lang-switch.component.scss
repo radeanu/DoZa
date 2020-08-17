@@ -1,14 +1,16 @@
-.langSwitch {
-  position: absolute;
-  display: flex;
-  align-items: center;
-  width: max-content;
-  height: max-content;
-  margin: 0;
-  padding: 5px 5px;
-  z-index: 1;
+.item {
+  padding: 3px 0;
 }
 
-select {
-  background-color: #c9cacc;
+.active {
+  background-color: #2196f3;
+  color: #ffffff !important;
+}
+
+.switch-button {
+  outline: none !important;
+  border: none !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  box-shadow: none !important;
 }
