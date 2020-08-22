@@ -10,6 +10,7 @@ import { AppPreferencesFormModule } from '../../components/forms/preferences-for
 import { AppLangSwitchModule } from '../../components/lang-switch/lang-switch.module';
 import { AppSideNavModule } from '../../components/side-nav/side-nav.module';
 import { AppToolbarModule } from '../../components/toolbar/toolbar.module';
+import { AppActivitiesModule } from '../../components/activities/activities.module';
 
 export const routes: Routes = [
   { path: '', component: DashboardComponent },
@@ -25,6 +26,7 @@ export const routes: Routes = [
     AppPreferencesFormModule,
     AppSideNavModule,
     AppToolbarModule,
+    AppActivitiesModule,
     SidebarModule,
     RouterModule.forChild(routes),
   ],

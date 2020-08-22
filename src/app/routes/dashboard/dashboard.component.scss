@@ -2,9 +2,13 @@
   padding: 5px 10px 10px 10px;
 }
 
-.sidebar {
-  height: 100%;
-  width: 100%;
-  position: fixed;
+app-side-nav {
   padding: 5px;
+  padding-top: 10px;
+  width: 100%;
+  height: 100%;
+}
+
+app-activities {
+  padding: 10px 0;
 }

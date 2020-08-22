@@ -21,3 +21,16 @@
 .item {
   padding: 20px 0;
 }
+
+.nav-button {
+  outline: none !important;
+  border: none !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+  color: #4b4b4b !important;
+
+  span {
+    outline: none !important;
+  }
+}

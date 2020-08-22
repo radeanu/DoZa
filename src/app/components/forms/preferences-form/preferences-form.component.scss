@@ -1,9 +1,26 @@
+::ng-deep div {
+  box-shadow: none !important;
+}
+
 .main {
   padding: 10px;
 }
 
-:host ::ng-deep .p-slider-handle {
+.description {
+  font-size: 1em;
+}
+
+.label {
+  font-size: 1.1em;
+  font-weight: bolder;
+}
+
+::ng-deep .p-slider-handle {
   height: 20px !important;
   width: 20px !important;
   top: 0 !important;
+}
+
+::ng-deep .p-slider {
+  background: #8d8d8d !important;
 }

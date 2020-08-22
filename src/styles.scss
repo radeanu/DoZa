@@ -14,10 +14,23 @@ button {
   border: none;
   cursor: pointer;
   overflow: hidden;
+  padding: 0;
 }
 
 i {
+  display: flex !important;
+  align-items: center !important;
   font-size: 1.2em;
+}
+
+.p-button {
+  outline: none !important;
+  overflow: hidden !important;
+  box-shadow: none !important;
+
+  span {
+    outline: none !important;
+  }
 }
 
 .full {
@@ -81,6 +94,10 @@ i {
   justify-content: center;
 }
 
+.y-col-center {
+  align-items: center;
+}
+
 .y-space-btw {
   justify-content: space-between;
 }
@@ -91,4 +108,8 @@ i {
 
 .transparent {
   background-color: Transparent;
+}
+
+.fixed {
+  position: fixed;
 }
