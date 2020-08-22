@@ -3,7 +3,7 @@
     <button
       pButton
       type="button" [label]="lang.value"
-      class="p-button-text switch-button"
+      class="p-button-text switch-button full"
       [ngClass]="(lang.label === currentLang)? 'p-button-primary active switch-button': 'p-button-secondary switch-button'"
       (click)="switchLang(lang)"
     ></button>
