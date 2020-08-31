@@ -6,7 +6,7 @@
     </div>
 
     <div class="flex col full content">
-      <div class="flex row x-space-evn item">
+      <div class="flex row gap-10 item">
         <i class="pi pi-star-o"></i>
         <button
         pButton pRipple
@@ -15,9 +15,18 @@
         (click)="navigateTo('preferences')"
         ></button>
       </div>
+      <div class="flex row gap-10 item">
+        <i class="pi pi-android"></i>
+        <button
+        pButton pRipple
+        type="button" label="Activities"
+        class="p-button-raised p-button-secondary p-button-text nav-button"
+        (click)="navigateTo('activities')"
+        ></button>
+      </div>
     </div>
   </div>
-  <div class="flex row x-space-evn footer">
+  <div class="flex row gap-10 footer">
     <span>Log out</span>
     <i class="pi pi-sign-out"></i>
   </div>

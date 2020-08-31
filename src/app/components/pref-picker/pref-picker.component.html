@@ -1,0 +1,119 @@
+<div class="flex col full">
+  <div class="flex header-box">
+    <div class="flex col main">
+      <div class="flex x-start header">
+        <div class="flex icon">
+          <p-checkbox [(ngModel)]="selectAll" binary="true"></p-checkbox>
+        </div>
+        <div class="flex search" (click)="displayItems = !displayItems">
+          <input
+            type="text"
+            class="search-input"
+            [placeholder]="displayItems ? 'Type to search' : ''"
+            [style.borderBottom]="displayItems ? '1px solid gray' : 'none'" />
+          <span class="icon">
+            <i [class]="displayItems ? 'pi pi-chevron-up' : 'pi pi-chevron-down'"></i>
+          </span>
+        </div>
+      </div>
+
+      <div class="items" *ngIf="displayItems">
+        <ul>
+          <li class="flex x-start">
+            <div>
+              <i class="pi pi-plus-circle"></i>
+            </div>
+            <div class="flex">
+              <i class="pi pi-palette"></i>
+              <span class="flex y-col-center item-description">Footbal</span>
+            </div>
+          </li>
+          <li class="flex x-start">
+            <div>
+              <i class="pi pi-plus-circle"></i>
+            </div>
+            <div class="flex">
+              <i class="pi pi-palette"></i>
+              <span class="flex y-col-center item-description">Footbal</span>
+            </div>
+          </li>
+          <li class="flex x-start">
+            <div>
+              <i class="pi pi-plus-circle"></i>
+            </div>
+            <div class="flex">
+              <i class="pi pi-palette"></i>
+              <span class="flex y-col-center item-description">Footbal</span>
+            </div>
+          </li>
+          <li class="flex x-start">
+            <div>
+              <i class="pi pi-plus-circle"></i>
+            </div>
+            <div class="flex">
+              <i class="pi pi-palette"></i>
+              <span class="flex y-col-center item-description">Footbal</span>
+            </div>
+          </li>
+          <li class="flex x-start">
+            <div>
+              <i class="pi pi-plus-circle"></i>
+            </div>
+            <div class="flex">
+              <i class="pi pi-palette"></i>
+              <span class="flex y-col-center item-description">Footbal</span>
+            </div>
+          </li>
+          <li class="flex x-start">
+            <div>
+              <i class="pi pi-plus-circle"></i>
+            </div>
+            <div class="flex">
+              <i class="pi pi-palette"></i>
+              <span class="flex y-col-center item-description">Footbal</span>
+            </div>
+          </li>
+          <li class="flex x-start">
+            <div>
+              <i class="pi pi-plus-circle"></i>
+            </div>
+            <div class="flex">
+              <i class="pi pi-palette"></i>
+              <span class="flex y-col-center item-description">Footbal</span>
+            </div>
+          </li>
+          <li class="flex x-start">
+            <div>
+              <i class="pi pi-plus-circle"></i>
+            </div>
+            <div class="flex">
+              <i class="pi pi-palette"></i>
+              <span class="flex y-col-center item-description">Footbal</span>
+            </div>
+          </li>
+          <li class="flex x-start">
+            <div>
+              <i class="pi pi-plus-circle"></i>
+            </div>
+            <div class="flex">
+              <i class="pi pi-palette"></i>
+              <span class="flex y-col-center item-description">Footbal</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="flex container wrap">
+    <div class="item" *ngFor="let item of items" >
+      <div class="flex">
+        <i [class]="item.icon"></i>
+        <span class="flex y-col-center item-description">{{item.name}}</span>
+      </div>
+      <div>
+        <i class="pi pi-times remove"></i>
+      </div>
+    </div>
+  </div>
+</div>

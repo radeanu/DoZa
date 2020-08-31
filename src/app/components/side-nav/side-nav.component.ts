@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -8,9 +8,12 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class SideNavComponent {
   setLang = false;
-  constructor(private route: ActivatedRoute, private router: Router) {}
+  @Output() refresh = new EventEmitter<boolean>();
+
+  constructor(private route: ActivatedRoute, private router: Router) { }
 
   navigateTo(path: string): void {
     this.router.navigate([path], { relativeTo: this.route });
+    this.refresh.emit(true);
   }
 }

@@ -3,11 +3,11 @@ import { SelectItem } from 'primeng/api';
 import { Location } from '@angular/common';
 
 @Component({
-  selector: 'app-preferences-form',
-  templateUrl: './preferences-form.component.html',
-  styleUrls: ['./preferences-form.component.scss'],
+  selector: 'app-preferences',
+  templateUrl: './preferences.component.html',
+  styleUrls: ['./preferences.component.scss'],
 })
-export class PreferencesFormComponent {
+export class PreferencesComponent {
   rangeValues = [15, 30];
   genders: any[];
   gender = { name: 'Any ' };

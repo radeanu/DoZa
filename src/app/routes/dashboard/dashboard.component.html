@@ -1,15 +1,14 @@
 <p-sidebar [(visible)]="visibleSidebar" [baseZIndex]="2" [style]="{width:'10em', padding: '0'}" [showCloseIcon]="false">
   <div class="flex col full fixed">
     <app-lang-switch class="flex x-center"></app-lang-switch>
-    <app-side-nav></app-side-nav>
+    <app-side-nav (refresh)="visibleSidebar=false"></app-side-nav>
   </div>
 </p-sidebar>
 
 <div class="flex col full">
   <app-toolbar class="flex" (sideNav)="visibleSidebar=true" style="border-bottom: 1px solid #d9d9d9;"></app-toolbar>
   <div class="main full">
-    <app-preferences-form *ngIf="currentRoute==='preferences'"></app-preferences-form>
-    <app-activities *ngIf="currentRoute===''" class="flex col y-col-center"></app-activities>
+    <router-outlet></router-outlet>
   </div>
 </div>
 

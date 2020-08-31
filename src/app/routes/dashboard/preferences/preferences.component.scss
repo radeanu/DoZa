@@ -1,8 +1,8 @@
-::ng-deep div {
-  box-shadow: none !important;
+.main {
+  gap: 10px;
 }
 
-.main {
+.form-box {
   padding: 10px;
 }
 
@@ -13,6 +13,17 @@
 .label {
   font-size: 1.1em;
   font-weight: bolder;
+}
+
+app-pref-picker {
+  margin: 20px 0;
+  border: 1px solid #afafaf;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+::ng-deep div {
+  box-shadow: none !important;
 }
 
 ::ng-deep .p-slider-handle {
