@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { SelectItem } from 'primeng/api';
 import { Location } from '@angular/common';
 
+import { ActivityOption } from '@shared/types';
+
 @Component({
   selector: 'app-preferences',
   templateUrl: './preferences.component.html',
@@ -13,6 +15,13 @@ export class PreferencesComponent {
   gender = { name: 'Any ' };
   activities: SelectItem[];
   selectedActivities = [];
+  preferences = [];
+  activityTypes = [
+    { name: 'Football', icon: 'pi pi-palette' },
+    { name: 'Basketball', icon: 'pi pi-tags' },
+    { name: 'Rally', icon: 'pi pi-th-large' },
+    { name: 'Volley', icon: 'pi pi-cloud' },
+  ];
 
   constructor(private location: Location) {
     this.genders = [{ name: 'Male' }, { name: 'Female' }, { name: 'Any' }];
@@ -27,5 +36,9 @@ export class PreferencesComponent {
 
   back(): void {
     this.location.back();
+  }
+
+  setActivities(evt: Array<ActivityOption>): void {
+    this.selectedActivities = evt;
   }
 }

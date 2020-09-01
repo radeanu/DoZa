@@ -7,7 +7,8 @@ ul {
 }
 
 li {
-  margin: 15px 0;
+  padding: 5px 5px;
+  padding-left: 5px;
 
   div:last-child {
     width: 100%;
@@ -41,7 +42,6 @@ li {
   overflow: scroll;
   max-height: 125px;
   overflow-x: hidden;
-  padding-left: 5px;
 }
 
 .container {
@@ -60,8 +60,13 @@ li {
 
 .remove {
   color: red;
+  cursor: pointer;
 }
 
 .header {
   gap: 5px;
+}
+
+.selected {
+  background-color: #e3e3e3;
 }

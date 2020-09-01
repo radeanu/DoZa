@@ -1,0 +1,57 @@
+<div class="flex col full lower">
+  <div class="flex header-box">
+    <div class="flex col main">
+      <div class="flex x-start header">
+        <div class="flex icon">
+          <p-checkbox binary="true" (onChange)="selectAll($event)"></p-checkbox>
+        </div>
+        <div class="flex search">
+          <input
+            #searched
+            type="text"
+            class="search-input"
+            placeholder="Type to search"
+            [style.borderBottom]="displayItems ? '1px solid gray' : 'none'"
+            (input)="filterOptions(searched.value)"/>
+          <span class="icon" (click)="displayItems = !displayItems">
+            <i [class]="displayItems ? 'pi pi-chevron-up' : 'pi pi-chevron-down'"></i>
+          </span>
+        </div>
+      </div>
+
+      <div class="items" *ngIf="displayItems">
+        <ul>
+          <li
+            [class]="state.checked ? 'flex x-start selected' : 'flex x-start'"
+            *ngFor="let option of displayedOptions">
+            <div>
+              <p-checkbox
+                #state
+                [name]="option.name"
+                [value]="option.name"
+                [(ngModel)]="pickedItemsName"
+                [inputId]="option.name"
+                (onChange)="bindItem($event, option)"></p-checkbox>
+            </div>
+            <div class="flex">
+              <i [class]="option.icon"></i>
+              <span class="flex y-col-center item-description">{{option.name}}</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="flex container wrap">
+    <div class="item" *ngFor="let item of pickedItems" >
+      <div class="flex">
+        <i [class]="item.icon"></i>
+        <span class="flex y-col-center item-description">{{item.name}}</span>
+      </div>
+      <div>
+        <i class="pi pi-times remove" (click)="removeItem(item)"></i>
+      </div>
+    </div>
+  </div>
+</div>

@@ -11,11 +11,9 @@ import { ChipsModule } from 'primeng/chips';
 import { ButtonModule } from 'primeng/button';
 
 import { PreferencesComponent } from './preferences.component';
-import { AppPrefPickerModule } from '../../../components/pref-picker/pref-picker.module';
+import { AppPickerModule } from '../../../components/picker/picker.module';
 
-export const routes: Routes = [
-  { path: '', component: PreferencesComponent },
-];
+export const routes: Routes = [{ path: '', component: PreferencesComponent }];
 
 @NgModule({
   declarations: [PreferencesComponent],
@@ -29,9 +27,9 @@ export const routes: Routes = [
     ButtonModule,
     DropdownModule,
     ChipsModule,
-    AppPrefPickerModule,
+    AppPickerModule,
     RouterModule.forChild(routes),
   ],
   providers: [DatePipe],
 })
-export class AppPreferencesFormModule { }
+export class AppPreferencesFormModule {}

@@ -27,7 +27,7 @@
     </div>
 
     <br>
-    <app-pref-picker class="full"></app-pref-picker>
+    <app-picker [options]="activityTypes" (items)='setActivities($event)' class="full"></app-picker>
   </div>
 
   <div class="flex x-space-evn">
