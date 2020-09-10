@@ -6,6 +6,8 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./activity-item.component.scss'],
 })
 export class ActivityItemComponent {
+  showContent = false;
+
   @Input() itemData = {
     header: {
       piIcon: 'pi pi-question-circle',

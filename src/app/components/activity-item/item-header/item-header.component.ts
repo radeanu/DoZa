@@ -7,9 +7,13 @@ import { Component, Input } from '@angular/core';
 })
 export class ItemHeaderComponent {
   @Input() headerData = {
-    piIcon: 'pi pi-question-circle',
-    author: 'unknown',
+    piIcon: 'pi pi-ban',
+    author: 'Unknown',
+    activity: { name: 'none', icon: 'pi pi-times-circle' },
     meta: '0/0',
+    content: {
+      description: 'No description',
+    },
   };
 
   constructor() {}

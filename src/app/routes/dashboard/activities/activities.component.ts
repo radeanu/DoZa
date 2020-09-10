@@ -11,30 +11,33 @@ export class ActivitiesComponent {
       header: {
         piIcon: 'pi pi-eye',
         author: 'Vasile',
+        activity: { name: 'Football', icon: 'pi pi-palette' },
         meta: '1/5',
       },
       content: {
-        description: 'Nimic',
+        description: 'Hz parca nimic',
       },
     },
     {
       header: {
         piIcon: 'pi pi-eye',
         author: 'Vasile',
+        activity: { name: 'Basketball', icon: 'pi pi-star' },
         meta: '1/5',
       },
       content: {
-        description: 'Nimic',
+        description: 'Lorem',
       },
     },
     {
       header: {
         piIcon: 'pi pi-eye',
         author: 'Vasile',
+        activity: { name: 'Rally', icon: 'pi pi-tag' },
         meta: '1/5',
       },
       content: {
-        description: 'Nimic',
+        description: 'Ceva tipa',
       },
     },
   ];

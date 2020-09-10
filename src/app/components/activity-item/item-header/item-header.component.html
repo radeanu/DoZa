@@ -1,9 +1,12 @@
-<div class="flex item">
-  <div class="flex x-center header-icon">
-    <i [class]="headerData.piIcon"></i>
-  </div>
-  <div class="flex x-center header-title">{{headerData.author}}</div>
+<div class="flex item x-space-btw">
   <div class="flex x-center header-meta">
     {{headerData.meta}}
+  </div>
+  <div class="flex gap-5 header-title">
+    <i [class]="headerData.activity.icon"></i>
+    {{headerData.activity.name}}</div>
+  <div class="header-title">{{headerData.author}}</div>
+  <div class="flex x-center header-meta">
+    <i [class]="headerData.piIcon"></i>
   </div>
 </div>
