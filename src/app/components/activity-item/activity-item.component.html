@@ -1,5 +1,12 @@
-<app-item-header [headerData]="itemData.header" (click)="showContent=!showContent"></app-item-header>
-<div #content [class]="showContent ? 'displayed-content' : 'hiden-content'">
-  <app-item-content [contentData]="itemData.content" *ngIf="showContent"></app-item-content>
+<app-item-header
+  [headerData]="itemData.header"
+  (click)="showContent=!showContent">
+</app-item-header>
+<div
+  [class]="showContent ? 'displayed-content' : 'hiden-content'"
+  [@openClose]="showContent ? 'open' : 'closed'">
+  <app-item-content
+    [contentData]="itemData.content"
+    *ngIf="showContent">
+  </app-item-content>
 </div>
-
