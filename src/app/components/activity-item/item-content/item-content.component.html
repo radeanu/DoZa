@@ -1,3 +1,23 @@
+<div class="flex row x-start gap-20">
+  <div class="flex row gap-2">
+    <span class="item-meta-description">#id:</span>
+    <span>{{data.id}}</span>
+  </div>
+  <div class="flex row gap-5">
+    <span class="item-meta-description">#author:</span>
+    <span>{{author}}</span>
+  </div>
+</div>
 <div class="flex col">
-  <span>{{contentData.description}}</span>
+  <span class="item-description">{{data.description}}</span>
+</div>
+<div class="flex row x-space-btw gap-20">
+  <div class="flex row gap-5 y-col-center">
+    <i class="pi pi-calendar"></i>
+    <span>{{data.date}}</span>
+  </div>
+  <div class="flex row gap-5 y-col-center">
+    <span>Ask to join</span>
+    <button pButton pRipple type="button" icon="pi pi-plus" class="p-button-rounded"></button>
+  </div>
 </div>

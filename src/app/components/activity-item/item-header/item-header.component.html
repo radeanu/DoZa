@@ -1,12 +1,12 @@
 <div class="flex item x-space-btw">
   <div class="flex x-center header-meta">
-    {{headerData.meta}}
+    {{data.meta}}
   </div>
   <div class="flex gap-5 header-title">
-    <i [class]="headerData.activity.icon"></i>
-    {{headerData.activity.name}}</div>
-  <div class="header-title">{{headerData.author}}</div>
+    <i [class]="data.activity.icon"></i>
+    {{data.activity.name}}</div>
+  <div class="header-title" *ngIf="showAuthor">{{author}}</div>
   <div class="flex x-center header-meta">
-    <i [class]="headerData.piIcon"></i>
+    <i [class]="data.icon"></i>
   </div>
 </div>

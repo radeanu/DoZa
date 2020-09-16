@@ -6,6 +6,7 @@ import {
   trigger,
 } from '@angular/animations';
 import { Component, Input } from '@angular/core';
+import { ActivityItem } from '@shared/types';
 
 @Component({
   selector: 'app-activity-item',
@@ -16,32 +17,35 @@ import { Component, Input } from '@angular/core';
       state(
         'open',
         style({
-          height: '50px',
+          minHeight: '50px',
           padding: '5px',
         })
       ),
       state(
         'closed',
         style({
-          height: 0,
+          minHeight: 0,
           padding: 0,
         })
       ),
-      transition('open <=> closed', [animate('0.2s')]),
+      transition('open <=> closed', [animate('0.2s ease-in-out')]),
     ]),
   ],
 })
 export class ActivityItemComponent {
   showContent = false;
 
-  @Input() itemData = {
+  @Input() itemData: ActivityItem = {
+    author: 'Unknown',
     header: {
-      piIcon: 'pi pi-question-circle',
-      author: 'unknown',
+      icon: 'pi pi-question-circle',
       meta: '0/0',
+      activity: { name: 'None', icon: 'pi pi-question-circle' },
     },
     content: {
+      id: 0,
       description: 'Empty',
+      date: '00-00-0000',
     },
   };
 

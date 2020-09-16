@@ -1,12 +1,16 @@
 <app-item-header
-  [headerData]="itemData.header"
+  [data]="itemData.header"
+  [author]="itemData.author"
+  [showAuthor]="!showContent"
   (click)="showContent=!showContent">
 </app-item-header>
 <div
-  [class]="showContent ? 'displayed-content' : 'hiden-content'"
+  [class]="showContent ? 'displayed-content' : 'hidden-content'"
   [@openClose]="showContent ? 'open' : 'closed'">
   <app-item-content
-    [contentData]="itemData.content"
+    class="flex col full content gap-10"
+    [data]="itemData.content"
+    [author]="itemData.author"
     *ngIf="showContent">
   </app-item-content>
 </div>

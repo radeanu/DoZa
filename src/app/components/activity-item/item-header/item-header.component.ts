@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { ActivityItemHeader } from '@shared/types';
 
 @Component({
   selector: 'app-item-header',
@@ -6,15 +7,13 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./item-header.component.scss'],
 })
 export class ItemHeaderComponent {
-  @Input() headerData = {
-    piIcon: 'pi pi-ban',
-    author: 'Unknown',
-    activity: { name: 'none', icon: 'pi pi-times-circle' },
+  @Input() data: ActivityItemHeader = {
+    icon: 'pi pi-question-circle',
     meta: '0/0',
-    content: {
-      description: 'No description',
-    },
+    activity: { name: 'None', icon: 'pi pi-question-circle' },
   };
+  @Input() showAuthor = false;
+  @Input() author = 'Unknown';
 
   constructor() {}
 }
