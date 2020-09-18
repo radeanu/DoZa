@@ -18,17 +18,15 @@ import { ActivityItem } from '@shared/types';
         'open',
         style({
           minHeight: '50px',
-          padding: '5px',
         })
       ),
       state(
         'closed',
         style({
           minHeight: 0,
-          padding: 0,
         })
       ),
-      transition('open <=> closed', [animate('0.2s ease-in-out')]),
+      transition('open <=> closed', [animate('0.3s ease')]),
     ]),
   ],
 })

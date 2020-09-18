@@ -8,7 +8,7 @@
   [class]="showContent ? 'displayed-content' : 'hidden-content'"
   [@openClose]="showContent ? 'open' : 'closed'">
   <app-item-content
-    class="flex col full content gap-10"
+    class="flex col full gap-10"
     [data]="itemData.content"
     [author]="itemData.author"
     *ngIf="showContent">
